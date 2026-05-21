@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive interactive pricing table with Basic, Pro, and Enterprise plans." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Pricing Table</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <h1>Simple, Transparent Pricing</h1>
+  <p class="subtitle">Choose the plan that works best for you.</p>
+
+  <div class="pricing-table">
+
+    <!-- Basic Plan -->
+    <div class="plan">
+      <p class="plan__name">Basic</p>
+      <!-- h2 element selector sets default muted price color -->
+      <h2>$9<span>/mo</span></h2>
+      <p class="plan__desc">Perfect for individuals and small projects just getting started.</p>
+      <ul class="plan__features">
+        <li>5 Projects</li>
+        <li>10 GB Storage</li>
+        <li>Email Support</li>
+        <li>API Access</li>
+      </ul>
+      <button class="btn-plan">Buy Now</button>
+    </div>
+
+    <!-- Pro Plan -->
+    <div class="plan plan--pro">
+      <span class="badge">Most Popular</span>
+      <p class="plan__name">Pro</p>
+      <!-- class selector .pro-price overrides the h2 element selector -->
+      <h2 class="pro-price">$29<span>/mo</span></h2>
+      <p class="plan__desc">For growing teams that need more power and flexibility.</p>
+      <ul class="plan__features">
+        <li>Unlimited Projects</li>
+        <li>100 GB Storage</li>
+        <li>Priority Support</li>
+        <li>API Access</li>
+        <li>Advanced Analytics</li>
+      </ul>
+      <!-- ID selector #btn-pro overrides the .btn-plan class selector -->
+      <button class="btn-plan" id="btn-pro">Buy Now</button>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="plan">
+      <p class="plan__name">Enterprise</p>
+      <!-- h2 element selector — default muted price color -->
+      <h2>$79<span>/mo</span></h2>
+      <p class="plan__desc">For large organizations that need scale, security, and control.</p>
+      <ul class="plan__features">
+        <li>Unlimited Projects</li>
+        <li>1 TB Storage</li>
+        <li>24/7 Dedicated Support</li>
+        <li>API Access</li>
+        <li>Advanced Analytics</li>
+        <li>Custom Integrations</li>
+      </ul>
+      <button class="btn-plan">Buy Now</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

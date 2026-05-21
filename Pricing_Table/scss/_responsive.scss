@@ -1,0 +1,9 @@
+// ── Responsive ────────────────────────────────────────────
+@use 'variables' as *;
+
+@media (max-width: $bp-tablet) {
+  .pricing-table {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}

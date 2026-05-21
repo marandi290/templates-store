@@ -1,0 +1,152 @@
+// ── Pricing Table ─────────────────────────────────────────
+@use 'variables' as *;
+@use 'sass:color';
+
+// ── Grid container
+.pricing-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 960px;
+  align-items: start;
+}
+
+// ── Plan card
+.plan {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+// ── Plan name
+.plan__name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: $primary;
+}
+
+// ── SPECIFICITY LAYER 1: element selector sets default price color
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $muted;
+  line-height: 1;
+
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $muted;
+  }
+}
+
+// ── SPECIFICITY LAYER 2: class selector overrides Pro plan price color
+.pro-price {
+  color: $pro-price;
+
+  span { color: $pro-price; }
+}
+
+// ── Plan description
+.plan__desc {
+  font-size: 0.9rem;
+  color: $muted;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border;
+}
+
+// ── Feature list
+.plan__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  li {
+    font-size: 0.9rem;
+    color: $text;
+    padding-left: 1.4rem;
+    position: relative;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+}
+
+// ── Default Buy Now button (shared base)
+.btn-plan {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid $primary;
+  border-radius: $radius;
+  background: transparent;
+  color: $primary;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background $transition, color $transition;
+  margin-top: auto;
+
+  // SPECIFICITY LAYER 3: :hover pseudo-class changes background on all buttons
+  &:hover {
+    background: $primary;
+    color: $white;
+  }
+}
+
+// ── Pro plan card highlight
+.plan--pro {
+  background: $pro-bg;
+  border-color: $pro-bg;
+  position: relative;
+  padding-top: 3rem;
+
+  .plan__name { color: $pro-price; }
+
+  .plan__desc { color: color.adjust($pro-text, $lightness: -25%); border-color: rgba(255,255,255,0.1); }
+
+  .plan__features li {
+    color: $pro-text;
+
+    &::before { color: $pro-price; }
+  }
+
+  .badge {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: $pro-price;
+    color: $white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+}
+
+// ── SPECIFICITY LAYER 3 (ID): overrides Pro plan CTA button specifically
+#btn-pro {
+  background: $pro-price;
+  border-color: $pro-price;
+  color: $white;
+
+  &:hover {
+    background: color.adjust($pro-price, $lightness: -10%);
+    border-color: color.adjust($pro-price, $lightness: -10%);
+  }
+}
