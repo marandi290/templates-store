@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DevOps Dashboard — CI/CD pipelines, service health, and deployments." />
+  <meta name="theme-color" content="#ef4444" />
+  <link rel="icon" href="favicon.ico" />
+  <title>DevOps Dashboard</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><div class="logo-icon">⚙</div> DevOps</div>
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <span class="nav-section-label">Overview</span>
+      <a href="#" class="nav-item active"><span class="nav-icon">🏠</span> Dashboard</a>
+      <a href="#" class="nav-item"><span class="nav-icon">🚀</span> Deployments <span class="nav-badge">2</span></a>
+      <a href="#" class="nav-item"><span class="nav-icon">🔄</span> Pipelines</a>
+      <span class="nav-section-label">Infrastructure</span>
+      <a href="#" class="nav-item"><span class="nav-icon">🖥️</span> Services</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📊</span> Metrics</a>
+      <a href="#" class="nav-item"><span class="nav-icon">🔔</span> Alerts</a>
+      <span class="nav-section-label">Settings</span>
+      <a href="#" class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-row">
+        <div class="user-avatar">DX</div>
+        <div class="user-info"><p class="user-name">Dev Xu</p><p class="user-role">DevOps Engineer</p></div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="menu-toggle" aria-label="Toggle sidebar">☰</button>
+      <span class="page-title">DevOps Overview</span>
+    </div>
+    <div class="topbar__right">
+      <div class="topbar__search"><span>🔍</span><input type="search" placeholder="Search services..." aria-label="Search" /></div>
+      <button class="icon-btn" aria-label="Notifications">🔔<span class="badge"></span></button>
+      <div class="topbar__avatar">DX</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <h1>DevOps Overview</h1>
+      <p>Monitor pipelines, deployments, and infrastructure health.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Deployments Today</span><span class="stat-card__icon icon--red">🚀</span></div>
+        <div class="stat-card__value">14</div>
+        <div class="stat-card__delta up">▲ 2 in progress</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Pipeline Success</span><span class="stat-card__icon icon--green">✅</span></div>
+        <div class="stat-card__value">94.2%</div>
+        <div class="stat-card__delta up">▲ 1.8% vs last week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Avg Build Time</span><span class="stat-card__icon icon--amber">⏱️</span></div>
+        <div class="stat-card__value">3m 42s</div>
+        <div class="stat-card__delta down">▼ 18s improvement</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Active Alerts</span><span class="stat-card__icon icon--sky">🔔</span></div>
+        <div class="stat-card__value">2</div>
+        <div class="stat-card__delta down">▼ 1 critical</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Latest Pipeline Run — main</h2><button class="widget__action">View all</button></div>
+        <div class="pipeline-stages">
+          <div class="pipeline-step"><div class="step-bubble pass">✓</div><div class="step-name">Checkout</div><div class="step-time">4s</div></div>
+          <div class="pipeline-step"><div class="step-bubble pass">✓</div><div class="step-name">Install</div><div class="step-time">42s</div></div>
+          <div class="pipeline-step"><div class="step-bubble pass">✓</div><div class="step-name">Lint</div><div class="step-time">12s</div></div>
+          <div class="pipeline-step"><div class="step-bubble pass">✓</div><div class="step-name">Test</div><div class="step-time">1m 8s</div></div>
+          <div class="pipeline-step"><div class="step-bubble pass">✓</div><div class="step-name">Build</div><div class="step-time">1m 52s</div></div>
+          <div class="pipeline-step"><div class="step-bubble run">↻</div><div class="step-name">Deploy</div><div class="step-time">Running</div></div>
+        </div>
+        <div class="widget__header" style="margin-top:1.25rem"><h2>Service Health</h2></div>
+        <table class="data-table">
+          <thead><tr><th>Service</th><th>Status</th><th>Uptime (30d)</th><th>Latency</th></tr></thead>
+          <tbody>
+            <tr><td>API Gateway</td><td><span class="status-badge active">Healthy</span></td><td><div class="uptime-bar"><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div></div></td><td>12ms</td></tr>
+            <tr><td>Auth Service</td><td><span class="status-badge active">Healthy</span></td><td><div class="uptime-bar"><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div></div></td><td>8ms</td></tr>
+            <tr><td>Database</td><td><span class="status-badge pending">Degraded</span></td><td><div class="uptime-bar"><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block warn"></div><div class="uptime-block warn"></div></div></td><td>142ms</td></tr>
+            <tr><td>CDN</td><td><span class="status-badge active">Healthy</span></td><td><div class="uptime-bar"><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div><div class="uptime-block up"></div></div></td><td>4ms</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Resource Usage</h2></div>
+        <div class="resource-meters">
+          <div class="resource-item"><div class="resource-header"><span>CPU</span><span>68%</span></div><div class="progress-bar"><div class="progress-fill ok" style="width:68%"></div></div></div>
+          <div class="resource-item"><div class="resource-header"><span>Memory</span><span>84%</span></div><div class="progress-bar"><div class="progress-fill warn" style="width:84%"></div></div></div>
+          <div class="resource-item"><div class="resource-header"><span>Disk</span><span>41%</span></div><div class="progress-bar"><div class="progress-fill ok" style="width:41%"></div></div></div>
+          <div class="resource-item"><div class="resource-header"><span>Network Out</span><span>92%</span></div><div class="progress-bar"><div class="progress-fill crit" style="width:92%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Deploy Log</h2><button class="widget__action">View all</button></div>
+        <div class="deploy-log">
+          <div class="deploy-entry"><span class="deploy-status run"></span><span class="deploy-env">prod</span><span class="deploy-msg">api-service v2.4.1 — deploying</span><span class="deploy-time">now</span></div>
+          <div class="deploy-entry"><span class="deploy-status ok"></span><span class="deploy-env">prod</span><span class="deploy-msg">frontend v3.1.0 — deployed successfully</span><span class="deploy-time">12m ago</span></div>
+          <div class="deploy-entry"><span class="deploy-status ok"></span><span class="deploy-env">staging</span><span class="deploy-msg">auth-service v1.8.2 — deployed successfully</span><span class="deploy-time">1h ago</span></div>
+          <div class="deploy-entry"><span class="deploy-status fail"></span><span class="deploy-env">prod</span><span class="deploy-msg">worker-service v0.9.4 — build failed</span><span class="deploy-time">3h ago</span></div>
+          <div class="deploy-entry"><span class="deploy-status ok"></span><span class="deploy-env">dev</span><span class="deploy-msg">db-migrations v1.2.0 — deployed successfully</span><span class="deploy-time">5h ago</span></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Active Alerts</h2></div>
+        <div class="deploy-log">
+          <div class="deploy-entry"><span class="deploy-status fail"></span><span class="deploy-env" style="color:#ef4444">CRIT</span><span class="deploy-msg">Network Out > 90% on prod-node-3</span><span class="deploy-time">5m ago</span></div>
+          <div class="deploy-entry"><span class="deploy-status run"></span><span class="deploy-env" style="color:#f59e0b">WARN</span><span class="deploy-msg">Memory usage > 80% on db-primary</span><span class="deploy-time">22m ago</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

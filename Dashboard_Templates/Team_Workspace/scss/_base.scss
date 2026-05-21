@@ -1,0 +1,35 @@
+// ── Reset & Base ──────────────────────────────────────────
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: $font-stack;
+  background: $bg;
+  color: $text;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: $sidebar-width 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul { list-style: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

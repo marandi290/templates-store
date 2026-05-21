@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Team Workspace Dashboard — members, standups, docs, and calendar." />
+  <meta name="theme-color" content="#10b981" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Team Workspace</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><div class="logo-icon">T</div> TeamSpace</div>
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <span class="nav-section-label">Workspace</span>
+      <a href="#" class="nav-item active"><span class="nav-icon">🏠</span> Home</a>
+      <a href="#" class="nav-item"><span class="nav-icon">💬</span> Messages <span class="nav-badge">6</span></a>
+      <a href="#" class="nav-item"><span class="nav-icon">📁</span> Docs</a>
+      <span class="nav-section-label">Team</span>
+      <a href="#" class="nav-item"><span class="nav-icon">👥</span> Members</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📅</span> Calendar</a>
+      <a href="#" class="nav-item"><span class="nav-icon">🎯</span> Goals</a>
+      <span class="nav-section-label">Settings</span>
+      <a href="#" class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-row">
+        <div class="user-avatar">MJ</div>
+        <div class="user-info"><p class="user-name">Morgan Jones</p><p class="user-role">Team Lead</p></div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="menu-toggle" aria-label="Toggle sidebar">☰</button>
+      <span class="page-title">Team Workspace</span>
+    </div>
+    <div class="topbar__right">
+      <div class="topbar__search"><span>🔍</span><input type="search" placeholder="Search workspace..." aria-label="Search" /></div>
+      <button class="icon-btn" aria-label="Notifications">🔔<span class="badge"></span></button>
+      <div class="topbar__avatar">MJ</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <h1>Good morning, Morgan 👋</h1>
+      <p>Here's what's happening with your team today.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Team Members</span><span class="stat-card__icon icon--green">👥</span></div>
+        <div class="stat-card__value">14</div>
+        <div class="stat-card__delta up">▲ 9 online now</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Open Tasks</span><span class="stat-card__icon icon--sky">📋</span></div>
+        <div class="stat-card__value">38</div>
+        <div class="stat-card__delta down">▼ 6 due today</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Docs Shared</span><span class="stat-card__icon icon--amber">📁</span></div>
+        <div class="stat-card__value">124</div>
+        <div class="stat-card__delta up">▲ 3 new this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Meetings Today</span><span class="stat-card__icon icon--violet">📅</span></div>
+        <div class="stat-card__value">4</div>
+        <div class="stat-card__delta up">▲ Next in 45 min</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Team Members</h2><button class="widget__action">Invite</button></div>
+        <div class="member-grid">
+          <div class="member-card"><div class="member-avatar">MJ</div><div class="member-name">Morgan Jones</div><div class="member-role">Team Lead</div><div class="member-status"><span class="status-dot online"></span>Online</div></div>
+          <div class="member-card"><div class="member-avatar">AK</div><div class="member-name">Alex Kim</div><div class="member-role">Designer</div><div class="member-status"><span class="status-dot online"></span>Online</div></div>
+          <div class="member-card"><div class="member-avatar">JR</div><div class="member-name">Jamie Ross</div><div class="member-role">Developer</div><div class="member-status"><span class="status-dot away"></span>Away</div></div>
+          <div class="member-card"><div class="member-avatar">CP</div><div class="member-name">Casey Park</div><div class="member-role">Developer</div><div class="member-status"><span class="status-dot online"></span>Online</div></div>
+          <div class="member-card"><div class="member-avatar">TL</div><div class="member-name">Taylor Liu</div><div class="member-role">Marketing</div><div class="member-status"><span class="status-dot offline"></span>Offline</div></div>
+          <div class="member-card"><div class="member-avatar">RN</div><div class="member-name">Riley Nair</div><div class="member-role">QA Engineer</div><div class="member-status"><span class="status-dot online"></span>Online</div></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Today's Standups</h2></div>
+        <div class="standup-feed">
+          <div class="standup-item"><div class="standup-avatar">MJ</div><div class="standup-body"><div class="standup-name">Morgan Jones</div><div class="standup-text">Reviewing sprint goals and unblocking the team.</div><time>9:02 AM</time></div></div>
+          <div class="standup-item"><div class="standup-avatar">AK</div><div class="standup-body"><div class="standup-name">Alex Kim</div><div class="standup-text">Finishing dashboard mockups, will share by noon.</div><time>9:05 AM</time></div></div>
+          <div class="standup-item"><div class="standup-avatar">CP</div><div class="standup-body"><div class="standup-name">Casey Park</div><div class="standup-text">Working on API integration, blocked on auth token issue.</div><time>9:08 AM</time></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Recent Docs</h2><button class="widget__action">New doc</button></div>
+        <div class="doc-list">
+          <div class="doc-item"><span class="doc-icon">📄</span><div class="doc-info"><div class="doc-name">Q3 Product Roadmap</div><div class="doc-meta">Updated by Morgan · 2 hr ago</div></div><button class="doc-action">Open</button></div>
+          <div class="doc-item"><span class="doc-icon">📊</span><div class="doc-info"><div class="doc-name">Sprint 14 Retrospective</div><div class="doc-meta">Updated by Alex · Yesterday</div></div><button class="doc-action">Open</button></div>
+          <div class="doc-item"><span class="doc-icon">📋</span><div class="doc-info"><div class="doc-name">Design System Guidelines</div><div class="doc-meta">Updated by Alex · 2 days ago</div></div><button class="doc-action">Open</button></div>
+          <div class="doc-item"><span class="doc-icon">🔧</span><div class="doc-info"><div class="doc-name">API Integration Notes</div><div class="doc-meta">Updated by Casey · 3 days ago</div></div><button class="doc-action">Open</button></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>This Week</h2></div>
+        <div class="calendar-strip">
+          <div class="cal-day"><div class="cal-weekday">Mon</div><div class="cal-date">9</div></div>
+          <div class="cal-day has-event"><div class="cal-weekday">Tue</div><div class="cal-date">10</div></div>
+          <div class="cal-day today has-event"><div class="cal-weekday">Wed</div><div class="cal-date">11</div></div>
+          <div class="cal-day has-event"><div class="cal-weekday">Thu</div><div class="cal-date">12</div></div>
+          <div class="cal-day"><div class="cal-weekday">Fri</div><div class="cal-date">13</div></div>
+          <div class="cal-day"><div class="cal-weekday">Sat</div><div class="cal-date">14</div></div>
+          <div class="cal-day"><div class="cal-weekday">Sun</div><div class="cal-date">15</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

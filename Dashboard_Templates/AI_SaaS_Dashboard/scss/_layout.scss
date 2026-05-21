@@ -1,0 +1,283 @@
+// ── Layout ────────────────────────────────────────────────
+@use 'variables' as *;
+
+// ── Sidebar
+.sidebar {
+  grid-row: 1 / -1;
+  width: $sidebar-width;
+  background: $sidebar-bg;
+  border-right: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 200;
+  transition: transform $transition;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid $border;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: $primary;
+  letter-spacing: -0.3px;
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    background: $primary;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 0.85rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+}
+
+.sidebar__nav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: $muted;
+  padding: 0.75rem 0.75rem 0.25rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: $radius;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $muted;
+  transition: background $transition, color $transition;
+
+  .nav-icon { font-size: 1rem; flex-shrink: 0; }
+
+  &:hover {
+    background: $primary-light;
+    color: $primary;
+  }
+
+  &.active {
+    background: $primary-light;
+    color: $primary;
+    font-weight: 600;
+  }
+
+  .nav-badge {
+    margin-left: auto;
+    background: $primary;
+    color: $white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+  }
+}
+
+.sidebar__footer {
+  padding: 1rem 0.75rem;
+  border-top: 1px solid $border;
+
+  .user-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: $radius;
+    transition: background $transition;
+    cursor: pointer;
+
+    &:hover { background: $primary-light; }
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $primary;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .user-info {
+    flex: 1;
+    min-width: 0;
+
+    .user-name {
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: $text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .user-role {
+      font-size: 0.72rem;
+      color: $muted;
+    }
+  }
+}
+
+// ── Topbar
+.topbar {
+  grid-column: 2;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $white;
+  border-bottom: 1px solid $border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: $topbar-height;
+  margin-left: $sidebar-width;
+}
+
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: $text;
+    padding: 0.25rem;
+  }
+
+  .page-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text;
+  }
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.topbar__search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 0.4rem 0.75rem;
+
+  input {
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    font-family: inherit;
+    color: $text;
+    width: 180px;
+    outline: none;
+
+    &::placeholder { color: $muted; }
+  }
+
+  span { color: $muted; font-size: 0.9rem; }
+}
+
+.icon-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: $muted;
+  padding: 0.4rem;
+  border-radius: $radius;
+  transition: background $transition, color $transition;
+
+  &:hover { background: $bg; color: $text; }
+
+  .badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background: $danger;
+    border-radius: 50%;
+    border: 2px solid $white;
+  }
+}
+
+.topbar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: $primary;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+// ── Main content
+.main {
+  grid-column: 2;
+  margin-left: $sidebar-width;
+  padding: 1.5rem;
+  min-height: calc(100vh - $topbar-height);
+}
+
+.main__header {
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $text;
+    margin-bottom: 0.2rem;
+  }
+
+  p { font-size: 0.875rem; color: $muted; }
+}
+
+// ── Overlay for mobile sidebar
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 199;
+}

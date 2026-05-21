@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI SaaS Dashboard — monitor model usage, API calls, and token consumption." />
+  <meta name="theme-color" content="#06b6d4" />
+  <link rel="icon" href="favicon.ico" />
+  <title>AI SaaS Dashboard</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><div class="logo-icon">AI</div> NeuralKit</div>
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <span class="nav-section-label">Platform</span>
+      <a href="#" class="nav-item active"><span class="nav-icon">🤖</span> Dashboard</a>
+      <a href="#" class="nav-item"><span class="nav-icon">⚡</span> Models</a>
+      <a href="#" class="nav-item"><span class="nav-icon">🔑</span> API Keys <span class="nav-badge">2</span></a>
+      <span class="nav-section-label">Usage</span>
+      <a href="#" class="nav-item"><span class="nav-icon">📊</span> Analytics</a>
+      <a href="#" class="nav-item"><span class="nav-icon">💳</span> Billing</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📋</span> Logs</a>
+      <span class="nav-section-label">Settings</span>
+      <a href="#" class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-row">
+        <div class="user-avatar">RK</div>
+        <div class="user-info"><p class="user-name">Riley Khan</p><p class="user-role">Developer</p></div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="menu-toggle" aria-label="Toggle sidebar">☰</button>
+      <span class="page-title">AI Platform Overview</span>
+    </div>
+    <div class="topbar__right">
+      <div class="topbar__search"><span>🔍</span><input type="search" placeholder="Search logs..." aria-label="Search" /></div>
+      <button class="icon-btn" aria-label="Notifications">🔔<span class="badge"></span></button>
+      <div class="topbar__avatar">RK</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <h1>AI Platform Overview</h1>
+      <p>Monitor model usage, token consumption, and API performance.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Total API Calls</span><span class="stat-card__icon icon--cyan">⚡</span></div>
+        <div class="stat-card__value">2.4M</div>
+        <div class="stat-card__delta up">▲ 18.3% this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Tokens Used</span><span class="stat-card__icon icon--violet">🔤</span></div>
+        <div class="stat-card__value">840M</div>
+        <div class="stat-card__delta up">▲ 22.1% this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Avg Latency</span><span class="stat-card__icon icon--green">⏱️</span></div>
+        <div class="stat-card__value">142ms</div>
+        <div class="stat-card__delta down">▼ 8ms improvement</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Error Rate</span><span class="stat-card__icon icon--amber">⚠️</span></div>
+        <div class="stat-card__value">0.12%</div>
+        <div class="stat-card__delta down">▼ 0.03% vs last month</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Token Usage by Model</h2><button class="widget__action">View details</button></div>
+        <div class="usage-meters">
+          <div class="usage-meter"><div class="usage-header"><span class="model-name">GPT-4o</span><span class="usage-pct">78%</span></div><div class="progress-bar"><div class="progress-fill" style="width:78%"></div></div><div class="usage-detail">390M / 500M tokens</div></div>
+          <div class="usage-meter"><div class="usage-header"><span class="model-name">Claude 3.5</span><span class="usage-pct">54%</span></div><div class="progress-bar"><div class="progress-fill" style="width:54%"></div></div><div class="usage-detail">270M / 500M tokens</div></div>
+          <div class="usage-meter"><div class="usage-header"><span class="model-name">Gemini 1.5</span><span class="usage-pct">31%</span></div><div class="progress-bar"><div class="progress-fill" style="width:31%"></div></div><div class="usage-detail">155M / 500M tokens</div></div>
+          <div class="usage-meter"><div class="usage-header"><span class="model-name">Llama 3</span><span class="usage-pct">12%</span></div><div class="progress-bar"><div class="progress-fill" style="width:12%"></div></div><div class="usage-detail">60M / 500M tokens</div></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Available Models</h2></div>
+        <div class="model-grid">
+          <div class="model-card"><span class="model-icon">🤖</span><div class="model-name">GPT-4o</div><div class="model-stat">128k context</div><span class="model-badge">Active</span></div>
+          <div class="model-card"><span class="model-icon">🧠</span><div class="model-name">Claude 3.5</div><div class="model-stat">200k context</div><span class="model-badge">Active</span></div>
+          <div class="model-card"><span class="model-icon">💎</span><div class="model-name">Gemini 1.5</div><div class="model-stat">1M context</div><span class="model-badge">Active</span></div>
+          <div class="model-card"><span class="model-icon">🦙</span><div class="model-name">Llama 3</div><div class="model-stat">8k context</div><span class="model-badge">Active</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>API Request Log</h2><button class="widget__action">View all</button></div>
+        <div class="api-log">
+          <div class="log-entry"><span class="log-method post">POST</span><span class="log-path">/v1/chat/completions</span><span class="log-status ok">200</span><span class="log-time">12ms</span></div>
+          <div class="log-entry"><span class="log-method get">GET</span><span class="log-path">/v1/models</span><span class="log-status ok">200</span><span class="log-time">4ms</span></div>
+          <div class="log-entry"><span class="log-method post">POST</span><span class="log-path">/v1/embeddings</span><span class="log-status ok">200</span><span class="log-time">28ms</span></div>
+          <div class="log-entry"><span class="log-method post">POST</span><span class="log-path">/v1/chat/completions</span><span class="log-status err">429</span><span class="log-time">2ms</span></div>
+          <div class="log-entry"><span class="log-method delete">DEL</span><span class="log-path">/v1/files/file-abc123</span><span class="log-status ok">200</span><span class="log-time">8ms</span></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Billing This Month</h2></div>
+        <div class="usage-meters">
+          <div class="usage-meter"><div class="usage-header"><span class="model-name">Current Spend</span><span class="usage-pct">$184</span></div><div class="progress-bar"><div class="progress-fill" style="width:61%"></div></div><div class="usage-detail">$184 / $300 limit</div></div>
+          <div class="usage-meter"><div class="usage-header"><span class="model-name">API Calls</span><span class="usage-pct">2.4M</span></div><div class="progress-bar"><div class="progress-fill" style="width:48%"></div></div><div class="usage-detail">2.4M / 5M included</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

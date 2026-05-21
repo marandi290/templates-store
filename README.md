@@ -13,6 +13,7 @@ A growing collection of free, production-ready HTML + Sass webpage templates. Ea
 | 3 | [Pricing_Table](./Pricing_Table/) | A responsive three-column pricing table demonstrating CSS specificity layers, :hover states, and JS file linking |
 | 4 | [URL_Journey](./URL_Journey/) | A visual DNS lookup diagram using semantic HTML, Flexbox, CSS-only arrows, and a browser cache explainer |
 | 5 | [Auth_Templates](./Auth_Templates/) | A complete set of 8 auth/user-flow templates: Login, Signup, Forgot Password, Reset Password, OTP, 2FA, Magic Link, Social Login |
+| 6 | [Dashboard_Templates](./Dashboard_Templates/) | A complete set of 8 dashboard templates: Analytics, Finance, CRM, Project Management, AI SaaS, Admin Panel, Team Workspace, DevOps |
 
 ---
 
@@ -35,6 +36,15 @@ Templates Store/
     ├── Two_Factor_Auth/
     ├── Magic_Link/
     └── Social_Login/
+└── Dashboard_Templates/ # Template 6 — 8 dashboard templates
+    ├── Analytics_Dashboard/
+    ├── Finance_Dashboard/
+    ├── CRM_Dashboard/
+    ├── Project_Dashboard/
+    ├── AI_SaaS_Dashboard/
+    ├── Admin_Panel/
+    ├── Team_Workspace/
+    └── DevOps_Dashboard/
 ```
 
 ---

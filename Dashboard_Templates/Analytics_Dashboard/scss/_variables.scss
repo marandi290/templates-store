@@ -1,0 +1,25 @@
+// ── Design Tokens — Analytics Dashboard ───────────────────
+$primary:       #4f46e5;
+$primary-dark:  #3730a3;
+$primary-light: #e0e7ff;
+$danger:        #ef4444;
+$warning:       #f59e0b;
+$success:       #10b981;
+$info:          #0ea5e9;
+$text:          #1f2937;
+$muted:         #6b7280;
+$bg:            #f8fafc;
+$white:         #ffffff;
+$border:        #e5e7eb;
+$sidebar-bg:    $white;
+
+$font-stack:    'Segoe UI', system-ui, sans-serif;
+$radius:        8px;
+$radius-lg:     12px;
+$transition:    0.2s ease;
+
+$sidebar-width: 240px;
+$topbar-height: 56px;
+
+$bp-tablet:     900px;
+$bp-mobile:     600px;

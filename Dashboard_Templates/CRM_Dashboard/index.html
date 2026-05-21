@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CRM Dashboard — manage contacts, deals, and pipeline." />
+  <meta name="theme-color" content="#8b5cf6" />
+  <link rel="icon" href="favicon.ico" />
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><div class="logo-icon">C</div> CRM</div>
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <span class="nav-section-label">Sales</span>
+      <a href="#" class="nav-item active"><span class="nav-icon">🏠</span> Dashboard</a>
+      <a href="#" class="nav-item"><span class="nav-icon">🤝</span> Contacts</a>
+      <a href="#" class="nav-item"><span class="nav-icon">💼</span> Deals <span class="nav-badge">7</span></a>
+      <span class="nav-section-label">Pipeline</span>
+      <a href="#" class="nav-item"><span class="nav-icon">📊</span> Pipeline</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📅</span> Activities</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📧</span> Emails</a>
+      <span class="nav-section-label">Settings</span>
+      <a href="#" class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-row">
+        <div class="user-avatar">SR</div>
+        <div class="user-info"><p class="user-name">Sam Rivera</p><p class="user-role">Sales Lead</p></div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="menu-toggle" aria-label="Toggle sidebar">☰</button>
+      <span class="page-title">CRM Overview</span>
+    </div>
+    <div class="topbar__right">
+      <div class="topbar__search"><span>🔍</span><input type="search" placeholder="Search contacts..." aria-label="Search" /></div>
+      <button class="icon-btn" aria-label="Notifications">🔔<span class="badge"></span></button>
+      <div class="topbar__avatar">SR</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <h1>CRM Overview</h1>
+      <p>Track your deals, contacts, and sales pipeline.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Total Contacts</span><span class="stat-card__icon icon--violet">👥</span></div>
+        <div class="stat-card__value">4,821</div>
+        <div class="stat-card__delta up">▲ 3.2% this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Open Deals</span><span class="stat-card__icon icon--sky">💼</span></div>
+        <div class="stat-card__value">142</div>
+        <div class="stat-card__delta up">▲ 11 new this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Won This Month</span><span class="stat-card__icon icon--green">🏆</span></div>
+        <div class="stat-card__value">$128,400</div>
+        <div class="stat-card__delta up">▲ 14.5% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Conversion Rate</span><span class="stat-card__icon icon--amber">🎯</span></div>
+        <div class="stat-card__value">24.8%</div>
+        <div class="stat-card__delta up">▲ 2.1% vs last month</div>
+      </div>
+    </div>
+
+    <div class="widget" style="margin-bottom:1rem">
+      <div class="widget__header"><h2>Deal Pipeline</h2><button class="widget__action">Add deal</button></div>
+      <div class="pipeline">
+        <div class="pipeline-stage">
+          <div class="stage-header"><span class="stage-name">Lead</span><span class="stage-count">24</span></div>
+          <div class="deal-card"><div class="deal-name">Acme Corp</div><div class="deal-value">$12,000</div><div class="deal-company">Enterprise</div></div>
+          <div class="deal-card"><div class="deal-name">Beta Ltd</div><div class="deal-value">$8,500</div><div class="deal-company">SMB</div></div>
+        </div>
+        <div class="pipeline-stage">
+          <div class="stage-header"><span class="stage-name">Qualified</span><span class="stage-count">18</span></div>
+          <div class="deal-card"><div class="deal-name">Gamma Inc</div><div class="deal-value">$34,000</div><div class="deal-company">Enterprise</div></div>
+          <div class="deal-card"><div class="deal-name">Delta Co</div><div class="deal-value">$15,200</div><div class="deal-company">Mid-market</div></div>
+        </div>
+        <div class="pipeline-stage">
+          <div class="stage-header"><span class="stage-name">Proposal</span><span class="stage-count">11</span></div>
+          <div class="deal-card"><div class="deal-name">Epsilon LLC</div><div class="deal-value">$52,000</div><div class="deal-company">Enterprise</div></div>
+        </div>
+        <div class="pipeline-stage">
+          <div class="stage-header"><span class="stage-name">Closed Won</span><span class="stage-count">9</span></div>
+          <div class="deal-card"><div class="deal-name">Zeta Group</div><div class="deal-value">$28,400</div><div class="deal-company">Mid-market</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Recent Contacts</h2><button class="widget__action">View all</button></div>
+        <table class="data-table">
+          <thead><tr><th>Contact</th><th>Company</th><th>Stage</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td><div class="contact-cell"><div class="contact-avatar">AM</div>Alex Morgan</div></td><td>Acme Corp</td><td><span class="status-badge active">Active</span></td><td>$12,000</td></tr>
+            <tr><td><div class="contact-cell"><div class="contact-avatar">JL</div>Jamie Lee</div></td><td>Beta Ltd</td><td><span class="status-badge pending">Pending</span></td><td>$8,500</td></tr>
+            <tr><td><div class="contact-cell"><div class="contact-avatar">CR</div>Chris Ray</div></td><td>Gamma Inc</td><td><span class="status-badge active">Active</span></td><td>$34,000</td></tr>
+            <tr><td><div class="contact-cell"><div class="contact-avatar">PK</div>Pat Kim</div></td><td>Delta Co</td><td><span class="status-badge inactive">Inactive</span></td><td>$15,200</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Recent Activity</h2></div>
+        <div class="activity-feed">
+          <div class="activity-item"><div class="activity-icon icon--violet">📧</div><div class="activity-body"><p>Email sent to <strong>Acme Corp</strong>.</p><time>10 min ago</time></div></div>
+          <div class="activity-item"><div class="activity-icon icon--green">🏆</div><div class="activity-body"><p>Deal <strong>Zeta Group</strong> marked won.</p><time>2 hr ago</time></div></div>
+          <div class="activity-item"><div class="activity-icon icon--sky">📅</div><div class="activity-body"><p>Meeting scheduled with <strong>Gamma Inc</strong>.</p><time>Yesterday</time></div></div>
+          <div class="activity-item"><div class="activity-icon icon--amber">💼</div><div class="activity-body"><p>New deal <strong>Epsilon LLC</strong> created.</p><time>2 days ago</time></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

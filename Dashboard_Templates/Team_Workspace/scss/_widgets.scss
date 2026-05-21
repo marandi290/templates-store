@@ -1,0 +1,111 @@
+// ── Widgets — Team Workspace Dashboard ───────────────────
+@use 'variables' as *;
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+
+.stat-card {
+  background: $white; border: 1px solid $border; border-radius: $radius-lg; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+
+  .stat-card__header { display: flex; align-items: center; justify-content: space-between;
+    .stat-card__label { font-size: 0.8rem; font-weight: 600; color: $muted; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card__icon  { width: 36px; height: 36px; border-radius: $radius; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  }
+
+  .stat-card__value { font-size: 1.75rem; font-weight: 800; color: $text; line-height: 1; }
+
+  .stat-card__delta { font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 0.25rem;
+    &.up   { color: $success; }
+    &.down { color: $danger; }
+  }
+}
+
+.icon--green  { background: $primary-light; color: $primary; }
+.icon--sky    { background: #e0f2fe; color: $info; }
+.icon--amber  { background: #fef3c7; color: $warning; }
+.icon--violet { background: #ede9fe; color: #8b5cf6; }
+
+.content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+
+.widget {
+  background: $white; border: 1px solid $border; border-radius: $radius-lg; padding: 1.25rem;
+
+  .widget__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;
+    h2 { font-size: 0.9rem; font-weight: 700; color: $text; }
+    .widget__action { font-size: 0.78rem; color: $primary; font-weight: 600; background: none; border: none; cursor: pointer;
+      &:hover { text-decoration: underline; }
+    }
+  }
+}
+
+// ── Team member grid
+.member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+
+.member-card {
+  background: $bg; border: 1px solid $border; border-radius: $radius; padding: 0.85rem; text-align: center;
+
+  .member-avatar { width: 44px; height: 44px; border-radius: 50%; background: $primary-light; color: $primary; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; margin: 0 auto 0.5rem; }
+
+  .member-name { font-size: 0.825rem; font-weight: 700; color: $text; }
+  .member-role { font-size: 0.72rem; color: $muted; }
+
+  .member-status { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; margin-top: 0.35rem;
+    .status-dot { width: 6px; height: 6px; border-radius: 50%;
+      &.online  { background: $success; }
+      &.away    { background: $warning; }
+      &.offline { background: $muted; }
+    }
+  }
+}
+
+// ── Standup feed
+.standup-feed { display: flex; flex-direction: column; gap: 0; }
+
+.standup-item { display: flex; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid $border; align-items: flex-start;
+  &:last-child { border-bottom: none; }
+
+  .standup-avatar { width: 32px; height: 32px; border-radius: 50%; background: $primary-light; color: $primary; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+
+  .standup-body { flex: 1;
+    .standup-name { font-size: 0.825rem; font-weight: 600; color: $text; }
+    .standup-text { font-size: 0.78rem; color: $muted; line-height: 1.4; }
+    time { font-size: 0.7rem; color: $muted; }
+  }
+}
+
+// ── Doc list
+.doc-list { display: flex; flex-direction: column; gap: 0; }
+
+.doc-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid $border;
+  &:last-child { border-bottom: none; }
+
+  .doc-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+  .doc-info { flex: 1;
+    .doc-name { font-size: 0.825rem; font-weight: 600; color: $text; }
+    .doc-meta { font-size: 0.72rem; color: $muted; }
+  }
+
+  .doc-action { font-size: 0.78rem; color: $primary; font-weight: 600; background: none; border: none; cursor: pointer;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// ── Calendar strip
+.calendar-strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.35rem; }
+
+.cal-day { text-align: center; padding: 0.5rem 0.25rem; border-radius: $radius; cursor: pointer; transition: background $transition;
+
+  .cal-weekday { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: $muted; margin-bottom: 0.2rem; }
+  .cal-date    { font-size: 0.875rem; font-weight: 600; color: $text; }
+
+  &.today { background: $primary; .cal-weekday, .cal-date { color: $white; } }
+  &.has-event .cal-date::after { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: $primary; margin: 2px auto 0; }
+  &.today.has-event .cal-date::after { background: $white; }
+  &:hover:not(.today) { background: $primary-light; }
+}
+
+.status-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  &.active   { background: #d1fae5; color: $success; }
+  &.pending  { background: #fef3c7; color: $warning; }
+  &.inactive { background: #fee2e2; color: $danger; }
+}

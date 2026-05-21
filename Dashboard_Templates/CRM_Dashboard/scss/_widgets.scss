@@ -1,0 +1,113 @@
+// ── Widgets — CRM Dashboard ───────────────────────────────
+@use 'variables' as *;
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+
+.stat-card {
+  background: $white; border: 1px solid $border; border-radius: $radius-lg; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+
+  .stat-card__header { display: flex; align-items: center; justify-content: space-between;
+    .stat-card__label { font-size: 0.8rem; font-weight: 600; color: $muted; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card__icon  { width: 36px; height: 36px; border-radius: $radius; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  }
+
+  .stat-card__value { font-size: 1.75rem; font-weight: 800; color: $text; line-height: 1; }
+
+  .stat-card__delta { font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 0.25rem;
+    &.up   { color: $success; }
+    &.down { color: $danger; }
+  }
+}
+
+.icon--violet { background: $primary-light; color: $primary; }
+.icon--green  { background: #d1fae5; color: $success; }
+.icon--amber  { background: #fef3c7; color: $warning; }
+.icon--sky    { background: #e0f2fe; color: $info; }
+.icon--red    { background: #fee2e2; color: $danger; }
+
+.content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+
+.widget {
+  background: $white; border: 1px solid $border; border-radius: $radius-lg; padding: 1.25rem;
+
+  .widget__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;
+    h2 { font-size: 0.9rem; font-weight: 700; color: $text; }
+    .widget__action { font-size: 0.78rem; color: $primary; font-weight: 600; background: none; border: none; cursor: pointer;
+      &:hover { text-decoration: underline; }
+    }
+  }
+}
+
+// ── Pipeline stages
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.pipeline-stage {
+  background: $bg;
+  border-radius: $radius;
+  padding: 0.75rem;
+
+  .stage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+
+    .stage-name { font-size: 0.78rem; font-weight: 700; color: $text; }
+    .stage-count { font-size: 0.72rem; background: $primary-light; color: $primary; padding: 0.1rem 0.4rem; border-radius: 999px; font-weight: 700; }
+  }
+}
+
+.deal-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+
+  .deal-name { font-weight: 600; color: $text; margin-bottom: 0.2rem; }
+  .deal-value { color: $primary; font-weight: 700; }
+  .deal-company { color: $muted; font-size: 0.72rem; }
+}
+
+// ── Contacts table
+.data-table {
+  width: 100%; border-collapse: collapse; font-size: 0.85rem;
+
+  th { text-align: left; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: $muted; padding: 0.5rem 0.75rem; border-bottom: 1px solid $border; }
+
+  td { padding: 0.65rem 0.75rem; color: $text; border-bottom: 1px solid $border;
+    &:last-child { text-align: right; }
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: $bg; }
+}
+
+.contact-cell { display: flex; align-items: center; gap: 0.6rem;
+  .contact-avatar { width: 28px; height: 28px; border-radius: 50%; background: $primary-light; color: $primary; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; }
+}
+
+.status-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  &.active   { background: #d1fae5; color: $success; }
+  &.pending  { background: #fef3c7; color: $warning; }
+  &.inactive { background: #fee2e2; color: $danger; }
+}
+
+// ── Activity feed
+.activity-feed { display: flex; flex-direction: column; gap: 0; }
+
+.activity-item { display: flex; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid $border; align-items: flex-start;
+  &:last-child { border-bottom: none; }
+
+  .activity-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+
+  .activity-body { flex: 1;
+    p { font-size: 0.825rem; color: $text; line-height: 1.4; strong { font-weight: 600; } }
+    time { font-size: 0.72rem; color: $muted; }
+  }
+}

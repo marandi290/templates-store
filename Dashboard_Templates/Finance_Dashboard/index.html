@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Finance Dashboard — revenue, expenses, and transactions." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Finance Dashboard</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><div class="logo-icon">F</div> Finance</div>
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <span class="nav-section-label">Overview</span>
+      <a href="#" class="nav-item active"><span class="nav-icon">💰</span> Dashboard</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📊</span> Revenue</a>
+      <a href="#" class="nav-item"><span class="nav-icon">💳</span> Transactions <span class="nav-badge">5</span></a>
+      <span class="nav-section-label">Management</span>
+      <a href="#" class="nav-item"><span class="nav-icon">📋</span> Budgets</a>
+      <a href="#" class="nav-item"><span class="nav-icon">🧾</span> Invoices</a>
+      <a href="#" class="nav-item"><span class="nav-icon">📈</span> Forecasts</a>
+      <span class="nav-section-label">Settings</span>
+      <a href="#" class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-row">
+        <div class="user-avatar">JD</div>
+        <div class="user-info"><p class="user-name">Jane Doe</p><p class="user-role">CFO</p></div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="menu-toggle" aria-label="Toggle sidebar">☰</button>
+      <span class="page-title">Finance Overview</span>
+    </div>
+    <div class="topbar__right">
+      <div class="topbar__search"><span>🔍</span><input type="search" placeholder="Search..." aria-label="Search" /></div>
+      <button class="icon-btn" aria-label="Notifications">🔔<span class="badge"></span></button>
+      <div class="topbar__avatar">JD</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <h1>Finance Overview</h1>
+      <p>Monitor revenue, expenses, and cash flow in real time.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Total Revenue</span><span class="stat-card__icon icon--sky">💰</span></div>
+        <div class="stat-card__value">$284,500</div>
+        <div class="stat-card__delta up">▲ 9.2% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Net Profit</span><span class="stat-card__icon icon--green">📈</span></div>
+        <div class="stat-card__value">$91,200</div>
+        <div class="stat-card__delta up">▲ 6.4% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Total Expenses</span><span class="stat-card__icon icon--amber">💸</span></div>
+        <div class="stat-card__value">$193,300</div>
+        <div class="stat-card__delta down">▼ 1.8% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__header"><span class="stat-card__label">Pending Invoices</span><span class="stat-card__icon icon--violet">🧾</span></div>
+        <div class="stat-card__value">18</div>
+        <div class="stat-card__delta down">▼ 3 vs last month</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Monthly Revenue</h2><button class="widget__action">Export</button></div>
+        <div class="sparkline">
+          <div class="spark-bar" style="height:50%"></div><div class="spark-bar" style="height:65%"></div>
+          <div class="spark-bar" style="height:45%"></div><div class="spark-bar" style="height:80%"></div>
+          <div class="spark-bar active" style="height:95%"></div><div class="spark-bar" style="height:70%"></div>
+          <div class="spark-bar" style="height:60%"></div><div class="spark-bar" style="height:75%"></div>
+          <div class="spark-bar" style="height:55%"></div><div class="spark-bar" style="height:85%"></div>
+          <div class="spark-bar" style="height:90%"></div><div class="spark-bar" style="height:78%"></div>
+        </div>
+        <div style="margin-top:1.5rem">
+          <div class="budget-list">
+            <div class="budget-item"><div class="budget-header"><span>Marketing</span><span>$42,000 / $60,000</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
+            <div class="budget-item"><div class="budget-header"><span>Engineering</span><span>$88,000 / $100,000</span></div><div class="progress-bar"><div class="progress-fill" style="width:88%"></div></div></div>
+            <div class="budget-item"><div class="budget-header"><span>Operations</span><span>$31,000 / $50,000</span></div><div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Expense Breakdown</h2></div>
+        <div class="donut-wrap">
+          <div class="donut" role="img" aria-label="Expense breakdown donut chart"></div>
+          <div class="donut-legend">
+            <div class="legend-item"><span class="dot" style="background:#0ea5e9"></span> Payroll <span>38%</span></div>
+            <div class="legend-item"><span class="dot" style="background:#10b981"></span> Infrastructure <span>22%</span></div>
+            <div class="legend-item"><span class="dot" style="background:#f59e0b"></span> Marketing <span>18%</span></div>
+            <div class="legend-item"><span class="dot" style="background:#8b5cf6"></span> Other <span>22%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="widget">
+        <div class="widget__header"><h2>Recent Transactions</h2><button class="widget__action">View all</button></div>
+        <table class="data-table">
+          <thead><tr><th>Description</th><th>Date</th><th>Category</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>AWS Invoice</td><td>Jun 10</td><td>Infrastructure</td><td><span class="amount debit">-$4,200</span></td></tr>
+            <tr><td>Client Payment — Acme</td><td>Jun 9</td><td>Revenue</td><td><span class="amount credit">+$18,500</span></td></tr>
+            <tr><td>Payroll Run</td><td>Jun 8</td><td>Payroll</td><td><span class="amount debit">-$62,000</span></td></tr>
+            <tr><td>Google Ads</td><td>Jun 7</td><td>Marketing</td><td><span class="amount debit">-$3,800</span></td></tr>
+            <tr><td>Client Payment — Beta Co</td><td>Jun 6</td><td>Revenue</td><td><span class="amount credit">+$9,200</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="widget">
+        <div class="widget__header"><h2>Budget Status</h2></div>
+        <div class="budget-list">
+          <div class="budget-item"><div class="budget-header"><span>Q2 Target</span><span>74%</span></div><div class="progress-bar"><div class="progress-fill" style="width:74%"></div></div></div>
+          <div class="budget-item"><div class="budget-header"><span>Annual Target</span><span>52%</span></div><div class="progress-bar"><div class="progress-fill" style="width:52%"></div></div></div>
+          <div class="budget-item"><div class="budget-header"><span>Cost Reduction</span><span>38%</span></div><div class="progress-bar"><div class="progress-fill" style="width:38%"></div></div></div>
+          <div class="budget-item"><div class="budget-header"><span>Savings Goal</span><span>61%</span></div><div class="progress-bar"><div class="progress-fill" style="width:61%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

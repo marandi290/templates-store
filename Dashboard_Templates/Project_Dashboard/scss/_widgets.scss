@@ -1,0 +1,116 @@
+// ── Widgets — Project Management Dashboard ────────────────
+@use 'variables' as *;
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+
+.stat-card {
+  background: $white; border: 1px solid $border; border-radius: $radius-lg; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+
+  .stat-card__header { display: flex; align-items: center; justify-content: space-between;
+    .stat-card__label { font-size: 0.8rem; font-weight: 600; color: $muted; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card__icon  { width: 36px; height: 36px; border-radius: $radius; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  }
+
+  .stat-card__value { font-size: 1.75rem; font-weight: 800; color: $text; line-height: 1; }
+
+  .stat-card__delta { font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 0.25rem;
+    &.up   { color: $success; }
+    &.down { color: $danger; }
+  }
+}
+
+.icon--amber  { background: $primary-light; color: $primary; }
+.icon--green  { background: #d1fae5; color: $success; }
+.icon--sky    { background: #e0f2fe; color: $info; }
+.icon--red    { background: #fee2e2; color: $danger; }
+.icon--violet { background: #ede9fe; color: #8b5cf6; }
+
+.content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+
+.widget {
+  background: $white; border: 1px solid $border; border-radius: $radius-lg; padding: 1.25rem;
+
+  .widget__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;
+    h2 { font-size: 0.9rem; font-weight: 700; color: $text; }
+    .widget__action { font-size: 0.78rem; color: $primary; font-weight: 600; background: none; border: none; cursor: pointer;
+      &:hover { text-decoration: underline; }
+    }
+  }
+}
+
+// ── Kanban board
+.kanban { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+
+.kanban-col {
+  background: $bg;
+  border-radius: $radius;
+  padding: 0.75rem;
+
+  .col-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;
+    .col-title { font-size: 0.78rem; font-weight: 700; color: $text; }
+    .col-count { font-size: 0.72rem; background: $primary-light; color: $primary; padding: 0.1rem 0.4rem; border-radius: 999px; font-weight: 700; }
+  }
+}
+
+.task-card {
+  background: $white; border: 1px solid $border; border-radius: $radius; padding: 0.75rem; margin-bottom: 0.5rem;
+
+  .task-title { font-size: 0.825rem; font-weight: 600; color: $text; margin-bottom: 0.4rem; }
+
+  .task-meta { display: flex; align-items: center; justify-content: space-between;
+    .task-tag { font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 999px; }
+    .task-due { font-size: 0.72rem; color: $muted; }
+  }
+
+  .task-progress { margin-top: 0.5rem;
+    .progress-bar { height: 4px; background: $border; border-radius: 999px; overflow: hidden;
+      .progress-fill { height: 100%; border-radius: 999px; background: $primary; }
+    }
+  }
+}
+
+.tag--design  { background: #ede9fe; color: #7c3aed; }
+.tag--dev     { background: #e0f2fe; color: #0284c7; }
+.tag--qa      { background: #d1fae5; color: #059669; }
+.tag--urgent  { background: #fee2e2; color: #dc2626; }
+
+// ── Team members
+.team-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.team-member { display: flex; align-items: center; gap: 0.75rem;
+  .member-avatar { width: 36px; height: 36px; border-radius: 50%; background: $primary-light; color: $primary; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+
+  .member-info { flex: 1;
+    .member-name { font-size: 0.825rem; font-weight: 600; color: $text; }
+    .member-role { font-size: 0.72rem; color: $muted; }
+  }
+
+  .member-tasks { font-size: 0.78rem; font-weight: 700; color: $primary; }
+}
+
+// ── Project list
+.project-list { display: flex; flex-direction: column; gap: 0; }
+
+.project-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid $border;
+  &:last-child { border-bottom: none; }
+
+  .project-icon { width: 32px; height: 32px; border-radius: $radius; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+
+  .project-info { flex: 1;
+    .project-name { font-size: 0.825rem; font-weight: 600; color: $text; }
+    .project-deadline { font-size: 0.72rem; color: $muted; }
+  }
+
+  .project-progress { width: 80px;
+    .progress-bar { height: 5px; background: $border; border-radius: 999px; overflow: hidden;
+      .progress-fill { height: 100%; border-radius: 999px; background: $primary; }
+    }
+    .progress-label { font-size: 0.68rem; color: $muted; text-align: right; margin-top: 2px; }
+  }
+}
+
+.status-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  &.active   { background: #d1fae5; color: $success; }
+  &.pending  { background: #fef3c7; color: $warning; }
+  &.inactive { background: #fee2e2; color: $danger; }
+}
