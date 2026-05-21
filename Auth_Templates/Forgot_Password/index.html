@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reset your password." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Forgot Password — Auth Templates</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <main class="auth-card">
+    <a href="#" class="auth-logo">MyBrand</a>
+    <h1 class="auth-heading">Forgot your password?</h1>
+    <p class="auth-subheading">Enter your email and we'll send you a reset link.</p>
+
+    <form class="auth-form" novalidate>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+      </div>
+
+      <button type="submit" class="btn-auth">Send reset link</button>
+    </form>
+
+    <p class="auth-footer"><a href="../Login/index.html">← Back to sign in</a></p>
+  </main>
+
+  <script>
+    document.querySelector('.auth-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Reset link sent. Wire up your backend here.');
+    });
+  </script>
+
+</body>
+</html>

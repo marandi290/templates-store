@@ -1,0 +1,12 @@
+// ── Responsive ────────────────────────────────────────────
+@use 'variables' as *;
+
+@media (max-width: $bp-mobile) {
+  .auth-card {
+    padding: 2rem 1.25rem;
+    border-radius: $radius;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+}

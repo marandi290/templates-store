@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enter the OTP sent to your device." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="favicon.ico" />
+  <title>OTP Verification — Auth Templates</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <main class="auth-card">
+    <a href="#" class="auth-logo">MyBrand</a>
+    <span class="auth-icon" aria-hidden="true">📩</span>
+    <h1 class="auth-heading">Check your email</h1>
+    <p class="auth-subheading">We sent a 6-digit code to <strong>you@example.com</strong>. Enter it below.</p>
+
+    <form class="auth-form" novalidate>
+      <div class="otp-group" role="group" aria-label="One-time password">
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6" />
+      </div>
+
+      <button type="submit" class="btn-auth">Verify code</button>
+    </form>
+
+    <p class="resend-row">Didn't receive a code? <button type="button">Resend</button></p>
+    <p class="auth-footer"><a href="../Login/index.html">← Back to sign in</a></p>
+  </main>
+
+  <script>
+    // Auto-advance focus between OTP inputs
+    const inputs = document.querySelectorAll('.otp-input');
+    inputs.forEach((input, i) => {
+      input.addEventListener('input', () => {
+        if (input.value && i < inputs.length - 1) inputs[i + 1].focus();
+      });
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Backspace' && !input.value && i > 0) inputs[i - 1].focus();
+      });
+    });
+
+    document.querySelector('.auth-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('OTP verified. Wire up your backend here.');
+    });
+  </script>
+
+</body>
+</html>

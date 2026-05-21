@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a new account." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Sign Up — Auth Templates</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <main class="auth-card">
+    <a href="#" class="auth-logo">MyBrand</a>
+    <h1 class="auth-heading">Create an account</h1>
+    <p class="auth-subheading">Start your free trial. No credit card required.</p>
+
+    <form class="auth-form" novalidate>
+      <div class="form-group">
+        <label for="name">Full name</label>
+        <input id="name" type="text" placeholder="Alex Morgan" autocomplete="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Min. 8 characters" autocomplete="new-password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm password</label>
+        <input id="confirm-password" type="password" placeholder="Repeat your password" autocomplete="new-password" required />
+      </div>
+
+      <div class="form-row">
+        <label>
+          <input type="checkbox" required />
+          I agree to the <a href="#">Terms &amp; Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-auth">Create account</button>
+    </form>
+
+    <p class="auth-footer">Already have an account? <a href="../Login/index.html">Sign in</a></p>
+  </main>
+
+  <script>
+    document.querySelector('.auth-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Signup submitted. Wire up your backend here.');
+    });
+  </script>
+
+</body>
+</html>

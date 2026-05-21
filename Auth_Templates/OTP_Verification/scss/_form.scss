@@ -1,0 +1,127 @@
+// ── Auth Card & Form ──────────────────────────────────────
+@use 'variables' as *;
+
+.auth-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.auth-logo {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: $primary;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  text-decoration: none;
+}
+
+.auth-icon {
+  font-size: 2.5rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.auth-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $text;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+.auth-subheading {
+  font-size: 0.9rem;
+  color: $muted;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+// ── OTP digit inputs
+.otp-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.otp-input {
+  width: 52px;
+  height: 56px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 2px solid $border;
+  border-radius: $radius;
+  color: $text;
+  font-family: inherit;
+  transition: border-color $transition, box-shadow $transition;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px $primary-light;
+  }
+}
+
+// ── Primary button
+.btn-auth {
+  width: 100%;
+  padding: 0.75rem;
+  background: $primary;
+  color: $white;
+  border: none;
+  border-radius: $radius;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background $transition, transform $transition;
+
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-2px);
+  }
+
+  &:active { transform: translateY(0); }
+}
+
+// ── Resend link
+.resend-row {
+  text-align: center;
+  font-size: 0.875rem;
+  color: $muted;
+  margin-top: 1.25rem;
+
+  button {
+    background: none;
+    border: none;
+    color: $primary;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: $muted;
+  margin-top: 1rem;
+
+  a {
+    color: $primary;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}

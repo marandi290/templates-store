@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.auth-logo {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #4f46e5;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  text-decoration: none;
+}
+
+.auth-icon {
+  font-size: 2.5rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.auth-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+.auth-subheading {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.otp-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.otp-input {
+  width: 52px;
+  height: 56px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  color: #1f2937;
+  font-family: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.otp-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+.btn-auth {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.btn-auth:hover {
+  background: #3730a3;
+  transform: translateY(-2px);
+}
+.btn-auth:active {
+  transform: translateY(0);
+}
+
+.resend-row {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 1.25rem;
+}
+.resend-row button {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+.resend-row button:hover {
+  text-decoration: underline;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+.auth-footer a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 2rem 1.25rem;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+}
