@@ -1,0 +1,35 @@
+// ── Reset & Base ──────────────────────────────────────────
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Expose tokens as CSS custom properties for runtime use
+:root {
+  --primary:      #{$primary};
+  --primary-dark: #{$primary-dark};
+  --text:         #{$text};
+  --muted:        #{$muted};
+  --bg-light:     #{$bg-light};
+  --white:        #{$white};
+  --radius:       #{$radius};
+  --transition:   #{$transition};
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: $font-stack;
+  color: $text;
+  line-height: $line-height;
+}
+
+.container {
+  width: min(90%, $container-max);
+  margin-inline: auto;
+}

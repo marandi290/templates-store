@@ -1,0 +1,9 @@
+// ── Main Entry Point ──────────────────────────────────────
+// Import order matters: variables → base → animations → layout → components → responsive
+
+@use 'variables';    // 1. Design tokens (no output)
+@use 'base';         // 2. Reset + :root + body
+@use 'animations';   // 3. @keyframes
+@use 'layout';       // 4. Header, nav, hero, sections, footer
+@use 'components';   // 5. Buttons, cards, gallery, form
+@use 'responsive';   // 6. Media queries (always last)

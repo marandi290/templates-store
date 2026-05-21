@@ -1,0 +1,53 @@
+// ── Responsive ────────────────────────────────────────────
+@use 'variables' as *;
+
+// Tablet: ≤ 768px
+@media (max-width: $bp-tablet) {
+  .hero    { padding: 4rem 0; }
+  .section { padding: 3.5rem 0; }
+
+  .cards { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-form { max-width: 100%; }
+}
+
+// Mobile: ≤ 480px
+@media (max-width: $bp-mobile) {
+  .nav-toggle { display: block; }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+
+    &.open { display: block; }
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    a { font-size: 1.1rem; }
+  }
+
+  .hero {
+    padding: 3rem 0;
+    p { font-size: 1rem; }
+  }
+
+  .btn { width: 100%; text-align: center; }
+
+  .section { padding: 2.5rem 0; }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .card { padding: 1.5rem; }
+
+  footer { font-size: 0.8rem; padding: 1.25rem 0; }
+}

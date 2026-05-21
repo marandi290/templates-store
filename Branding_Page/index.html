@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MyBrand — Building beautiful, responsive web experiences." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="favicon.ico" />
+  <title>My Website</title>
+  <!-- Production: minified + cache-busted -->
+  <link rel="stylesheet" href="styles.min.css?v=1.0.1" />
+  <!-- Dev only: swap above for styles.css while editing Sass -->
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">MyBrand</div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Welcome to MyBrand</h1>
+        <p>Building beautiful, responsive web experiences.</p>
+        <a href="#services" class="btn">Explore Services</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>We are a passionate team dedicated to crafting modern digital solutions that help businesses grow and connect with their audience.</p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section bg-light">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Web Design</h3>
+            <p>Pixel-perfect, user-friendly interfaces tailored to your brand.</p>
+          </div>
+          <div class="card">
+            <h3>Development</h3>
+            <p>Robust front-end and back-end solutions built to scale.</p>
+          </div>
+          <div class="card">
+            <h3>SEO & Marketing</h3>
+            <p>Data-driven strategies to boost visibility and conversions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Our Work</h2>
+        <div class="gallery">
+          <!-- Replace picsum URLs with your own images before deploying -->
+          <div class="img-wrap">
+            <img src="https://picsum.photos/seed/design/600/400" alt="A web design project showcasing a modern UI layout" loading="lazy" />
+            <div class="img-overlay"><span>Web Design</span></div>
+          </div>
+          <div class="img-wrap">
+            <img src="https://picsum.photos/seed/dev/600/400" alt="A web development project with clean code architecture" loading="lazy" />
+            <div class="img-overlay"><span>Development</span></div>
+          </div>
+          <div class="img-wrap">
+            <img src="https://picsum.photos/seed/seo/600/400" alt="An SEO and digital marketing campaign dashboard" loading="lazy" />
+            <div class="img-overlay"><span>SEO &amp; Marketing</span></div>
+          </div>
+          <div class="img-wrap">
+            <img src="https://picsum.photos/seed/brand/600/400" alt="A branding project featuring logo and identity design" loading="lazy" />
+            <div class="img-overlay"><span>Branding</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" novalidate>
+          <label for="contact-name">Name
+            <input id="contact-name" type="text" placeholder="Your Name" required />
+          </label>
+          <label for="contact-email">Email
+            <input id="contact-email" type="email" placeholder="Your Email" required autocomplete="email" />
+          </label>
+          <label for="contact-message">Message
+            <textarea id="contact-message" rows="5" placeholder="Your Message" required></textarea>
+          </label>
+          <button type="submit" class="btn">Send Message</button>
+          <p class="form-status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyBrand. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav toggle with aria-expanded
+    const nav = document.querySelector('nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Stop shimmer once each gallery image loads
+    document.querySelectorAll('.img-wrap img').forEach(img => {
+      const done = () => img.closest('.img-wrap').classList.add('shimmer-done');
+      if (img.complete) done();
+      else img.addEventListener('load', done);
+    });
+
+    // Ripple effect — skipped when user prefers reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const r = document.createElement('span');
+          r.className = 'ripple';
+          const rect = this.getBoundingClientRect();
+          r.style.left = (e.clientX - rect.left - 5) + 'px';
+          r.style.top  = (e.clientY - rect.top  - 5) + 'px';
+          this.appendChild(r);
+          r.addEventListener('animationend', () => r.remove(), { once: true });
+        });
+      });
+    }
+
+    // Contact form submission handler
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const status = this.querySelector('.form-status');
+      status.hidden = false;
+      status.textContent = 'Thanks for your message! We\'ll be in touch soon.';
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

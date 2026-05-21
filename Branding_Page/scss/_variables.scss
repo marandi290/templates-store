@@ -1,0 +1,34 @@
+// ── Theme Tokens ──────────────────────────────────────────
+// Colors
+$primary:       #4f46e5;
+$primary-dark:  #3730a3;
+$primary-light: #e0e7ff;
+$accent:        #7c3aed;
+$text:          #1f2937;
+$muted:         #6b7280;
+$bg-light:      #f9fafb;
+$white:         #ffffff;
+$border:        #d1d5db;
+$footer-bg:     $text;
+$footer-text:   #9ca3af;
+
+// Shimmer skeleton colors
+$shimmer-base:  #e5e7eb;
+$shimmer-shine: #f3f4f6;
+
+// Typography
+$font-stack:    'Segoe UI', system-ui, sans-serif;
+$line-height:   1.6;
+
+// Spacing
+$section-pad:   5rem;
+$hero-pad:      6rem;
+
+// Misc
+$radius:        8px;
+$transition:    0.25s ease;
+$container-max: 1100px;
+
+// Breakpoints
+$bp-tablet: 768px;
+$bp-mobile: 480px;
