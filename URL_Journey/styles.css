@@ -1,0 +1,255 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f1f5f9;
+  color: #1f2937;
+  line-height: 1.6;
+  padding: 3rem 1.5rem;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.page {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.dns-flow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-bottom: 3rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.step:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #94a3b8;
+  position: relative;
+  flex-shrink: 0;
+  border-top: 2px solid #94a3b8;
+}
+.step:not(:last-child)::after::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #94a3b8;
+}
+
+.arrow {
+  width: 44px;
+  height: 2px;
+  background: #94a3b8;
+  position: relative;
+  flex-shrink: 0;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 7.2px solid transparent;
+  border-bottom: 7.2px solid transparent;
+  border-left: 12px solid #94a3b8;
+}
+
+article.step-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  width: 148px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+}
+article.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+article.step-card .step-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+article.step-card .step-number {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+article.step-card h2 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+article.step-card p {
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.step-card--browser {
+  border-color: #4f46e5;
+}
+.step-card--browser .step-icon {
+  color: #4f46e5;
+}
+
+.step-card--cache {
+  border-color: #10b981;
+}
+.step-card--cache .step-icon {
+  color: #10b981;
+}
+
+.step-card--resolver {
+  border-color: #0ea5e9;
+}
+.step-card--resolver .step-icon {
+  color: #0ea5e9;
+}
+
+.step-card--root {
+  border-color: #f59e0b;
+}
+.step-card--root .step-icon {
+  color: #f59e0b;
+}
+
+.step-card--tld {
+  border-color: #f59e0b;
+}
+.step-card--tld .step-icon {
+  color: #f59e0b;
+}
+
+.step-card--auth {
+  border-color: #0ea5e9;
+}
+.step-card--auth .step-icon {
+  color: #0ea5e9;
+}
+
+.step-card--server {
+  border-color: #10b981;
+}
+.step-card--server .step-icon {
+  color: #10b981;
+}
+
+.cache-hit {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: #10b981;
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.4rem;
+}
+
+.flow-label {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+aside.cache-explainer {
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+aside.cache-explainer h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+aside.cache-explainer p {
+  font-size: 0.9rem;
+  color: #1f2937;
+  line-height: 1.7;
+}
+aside.cache-explainer p + p {
+  margin-top: 0.6rem;
+}
+aside.cache-explainer p strong {
+  color: #4f46e5;
+}
+
+@media (max-width: 768px) {
+  .dns-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .arrow {
+    width: 2px;
+    height: 36px;
+    background: #94a3b8;
+  }
+  .arrow::after {
+    right: 50%;
+    top: auto;
+    bottom: -1px;
+    transform: translateX(50%);
+    border-left: 7.2px solid transparent;
+    border-right: 7.2px solid transparent;
+    border-top: 12px solid #94a3b8;
+    border-bottom: none;
+  }
+  article.step-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

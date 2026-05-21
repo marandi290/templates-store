@@ -1,0 +1,144 @@
+// ── Diagram ───────────────────────────────────────────────
+@use 'variables' as *;
+
+// ── Flow container — Flexbox horizontal row
+.dns-flow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-bottom: 3rem;
+}
+
+// ── Step wrapper — holds the card + arrow
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+// ── CSS-only arrow between steps using ::after
+.step:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: $arrow-color;
+  position: relative;
+  flex-shrink: 0;
+
+  // Arrowhead via border trick
+  border-top: 2px solid $arrow-color;
+
+  // Right-pointing triangle at the end
+  &::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: $arrow-size solid transparent;
+    border-bottom: $arrow-size solid transparent;
+    border-left: $arrow-size solid $arrow-color;
+  }
+}
+
+// ── Arrow connector — separate element for cleaner control
+.arrow {
+  width: 44px;
+  height: 2px;
+  background: $arrow-color;
+  position: relative;
+  flex-shrink: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: $arrow-size * 0.6 solid transparent;
+    border-bottom: $arrow-size * 0.6 solid transparent;
+    border-left: $arrow-size solid $arrow-color;
+  }
+}
+
+// ── Step card
+article.step-card {
+  background: $white;
+  border: 2px solid $border;
+  border-radius: $radius;
+  padding: 1.25rem 1rem;
+  width: 148px;
+  text-align: center;
+  transition: transform $transition, box-shadow $transition;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .step-number {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: $muted;
+    margin-bottom: 0.25rem;
+  }
+
+  h2 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $text;
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.75rem;
+    color: $muted;
+    line-height: 1.4;
+  }
+}
+
+// ── Step accent colors
+.step-card--browser  { border-color: $primary;  .step-icon { color: $primary; } }
+.step-card--cache    { border-color: $success;  .step-icon { color: $success; } }
+.step-card--resolver { border-color: $accent;   .step-icon { color: $accent;  } }
+.step-card--root     { border-color: $warning;  .step-icon { color: $warning; } }
+.step-card--tld      { border-color: $warning;  .step-icon { color: $warning; } }
+.step-card--auth     { border-color: $accent;   .step-icon { color: $accent;  } }
+.step-card--server   { border-color: $success;  .step-icon { color: $success; } }
+
+// ── Cache hit label
+.cache-hit {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: $success;
+  color: $white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.4rem;
+}
+
+// ── Flow label row
+.flow-label {
+  text-align: center;
+  font-size: 0.78rem;
+  color: $muted;
+  margin-bottom: 2rem;
+  font-style: italic;
+}

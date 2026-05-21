@@ -1,0 +1,32 @@
+// ── Aside — Cache Explanation ─────────────────────────────
+@use 'variables' as *;
+
+aside.cache-explainer {
+  background: $aside-bg;
+  border: 1px solid $aside-border;
+  border-left: 4px solid $warning;
+  border-radius: $radius;
+  padding: 1.5rem 1.75rem;
+  max-width: 1000px;
+  margin-inline: auto;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text;
+    line-height: 1.7;
+
+    & + p { margin-top: 0.6rem; }
+
+    strong { color: $primary; }
+  }
+}

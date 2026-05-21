@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A visual diagram of the DNS lookup process — from browser to web server." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="favicon.ico" />
+  <title>URL Journey Visualizer</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <div class="page">
+
+    <h1>The URL Journey</h1>
+    <p class="subtitle">What happens between typing a URL and seeing a webpage — step by step.</p>
+
+    <!-- DNS Lookup Flow -->
+    <section aria-label="DNS Lookup Process">
+
+      <div class="dns-flow">
+
+        <!-- Step 1: Browser -->
+        <article class="step-card step-card--browser">
+          <span class="step-icon">🌐</span>
+          <p class="step-number">Step 1</p>
+          <h2>Browser</h2>
+          <p>You type a URL. The browser needs to resolve it to an IP address.</p>
+        </article>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <!-- Step 2: Browser Cache -->
+        <article class="step-card step-card--cache">
+          <span class="step-icon">⚡</span>
+          <p class="step-number">Step 2</p>
+          <h2>Browser Cache</h2>
+          <p>Checks local DNS cache for a stored IP address.</p>
+          <span class="cache-hit">Fastest path</span>
+        </article>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <!-- Step 3: Recursive Resolver -->
+        <article class="step-card step-card--resolver">
+          <span class="step-icon">🔍</span>
+          <p class="step-number">Step 3</p>
+          <h2>DNS Resolver</h2>
+          <p>ISP's recursive resolver queries the DNS hierarchy on your behalf.</p>
+        </article>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <!-- Step 4: Root Name Server -->
+        <article class="step-card step-card--root">
+          <span class="step-icon">🌍</span>
+          <p class="step-number">Step 4</p>
+          <h2>Root Server</h2>
+          <p>Directs the resolver to the correct TLD name server (e.g. .com).</p>
+        </article>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <!-- Step 5: TLD Name Server -->
+        <article class="step-card step-card--tld">
+          <span class="step-icon">🗂️</span>
+          <p class="step-number">Step 5</p>
+          <h2>TLD Server</h2>
+          <p>Points to the authoritative name server for the specific domain.</p>
+        </article>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <!-- Step 6: Authoritative Name Server -->
+        <article class="step-card step-card--auth">
+          <span class="step-icon">📋</span>
+          <p class="step-number">Step 6</p>
+          <h2>Auth. Server</h2>
+          <p>Returns the final IP address for the domain to the resolver.</p>
+        </article>
+
+        <div class="arrow" aria-hidden="true"></div>
+
+        <!-- Step 7: Web Server -->
+        <article class="step-card step-card--server">
+          <span class="step-icon">🖥️</span>
+          <p class="step-number">Step 7</p>
+          <h2>Web Server</h2>
+          <p>Browser connects via TCP/IP and the server returns the HTML page.</p>
+        </article>
+
+      </div>
+
+      <p class="flow-label">
+        Steps 3 – 6 are only reached when the IP is not found in the browser cache or OS cache.
+      </p>
+
+    </section>
+
+    <!-- Cache Explanation Aside -->
+    <aside class="cache-explainer">
+      <h3>⚡ Why the Browser Cache is the Fastest Step</h3>
+      <p>
+        When your browser successfully resolves a domain, it stores the resulting IP address
+        locally in its <strong>DNS cache</strong> for a period defined by the record's
+        <strong>TTL (Time To Live)</strong>. On your next visit, the browser checks this cache
+        first — before contacting any external server.
+      </p>
+      <p>
+        Because the cache lives directly in memory on your device, there is
+        <strong>zero network latency</strong> — no packets leave your machine. This makes it
+        orders of magnitude faster than any other step in the journey, which each require at
+        least one round-trip across the internet. Effective caching is one of the most impactful
+        performance optimizations available to both browsers and web developers.
+      </p>
+    </aside>
+
+  </div>
+
+</body>
+</html>
