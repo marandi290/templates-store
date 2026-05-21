@@ -9,6 +9,7 @@ A growing collection of free, production-ready HTML + Sass webpage templates. Ea
 | # | Template | Description |
 |---|---|---|
 | 1 | [Branding_Page](./Branding_Page/) | A modern single-page branding/marketing site with animated hero, services cards, gallery, and contact form |
+| 2 | [Blog_Card](./Blog_Card/) | A responsive blog card with semantic HTML5, Flexbox layout, and a 600px breakpoint switching horizontal to vertical |
 
 ---
 
@@ -18,7 +19,13 @@ Each template lives in its own folder and is fully independent:
 
 ```
 Templates Store/
-└── Branding_Page/       # Template 1
+├── Branding_Page/       # Template 1
+│   ├── scss/            # Sass source files
+│   ├── index.html       # Main HTML file
+│   ├── styles.css       # Unminified CSS (reference)
+│   ├── styles.min.css   # Compiled & minified production CSS
+│   └── README.md        # Template-specific documentation
+└── Blog_Card/           # Template 2
     ├── scss/            # Sass source files
     ├── index.html       # Main HTML file
     ├── styles.css       # Unminified CSS (reference)

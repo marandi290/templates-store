@@ -1,0 +1,17 @@
+// ── Responsive ────────────────────────────────────────────
+@use 'variables' as *;
+
+@media (max-width: $bp-mobile) {
+  .blog-card {
+    flex-direction: column;
+  }
+
+  .blog-card__figure {
+    flex: none;
+    height: 200px;
+  }
+
+  .blog-card__body {
+    padding: 1.25rem 1.5rem;
+  }
+}
