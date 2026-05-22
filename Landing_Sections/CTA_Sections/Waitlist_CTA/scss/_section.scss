@@ -1,0 +1,87 @@
+﻿@use "variables" as *;
+
+.waitlist-cta {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+}
+
+.waitlist-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius-xl;
+  box-shadow: 0 25px 80px rgba(15,23,42,0.08);
+  overflow: hidden;
+}
+
+.waitlist-hero {
+  padding: 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.waitlist-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $primary;
+  background: $primary-light;
+  padding: 0.65rem 1rem;
+  border-radius: $radius;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.waitlist-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.waitlist-hero p {
+  color: $muted;
+  max-width: 46rem;
+}
+
+.waitlist-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.waitlist-form input {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border: 1px solid $border;
+  border-radius: $radius;
+  font-size: 1rem;
+}
+
+.waitlist-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 2rem 3rem 3rem;
+  background: $bg;
+}
+
+.waitlist-meta-item {
+  text-align: center;
+}
+
+.waitlist-meta-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.waitlist-meta-item p {
+  color: $muted;
+  font-size: 0.95rem;
+}
+
+@media (max-width: $bp-tablet) {
+  .waitlist-form { grid-template-columns: 1fr; }
+  .waitlist-meta { grid-template-columns: 1fr; }
+}
+

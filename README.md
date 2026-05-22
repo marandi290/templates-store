@@ -14,6 +14,7 @@ A growing collection of free, production-ready HTML + Sass webpage templates. Ea
 | 4 | [URL_Journey](./URL_Journey/) | A visual DNS lookup diagram using semantic HTML, Flexbox, CSS-only arrows, and a browser cache explainer |
 | 5 | [Auth_Templates](./Auth_Templates/) | A complete set of 8 auth/user-flow templates: Login, Signup, Forgot Password, Reset Password, OTP, 2FA, Magic Link, Social Login |
 | 6 | [Dashboard_Templates](./Dashboard_Templates/) | A complete set of 8 dashboard templates: Analytics, Finance, CRM, Project Management, AI SaaS, Admin Panel, Team Workspace, DevOps |
+| 7 | [Landing_Sections](./Landing_Sections/) | Modular landing page sections: CTAs, feature blocks, hero screens, and social proof components |
 
 ---
 
@@ -27,7 +28,7 @@ Templates Store/
 ├── Blog_Card/           # Template 2
 ├── Pricing_Table/       # Template 3
 ├── URL_Journey/         # Template 4
-└── Auth_Templates/      # Template 5 — 8 auth flow templates
+├── Auth_Templates/      # Template 5 — 8 auth flow templates
     ├── Login/
     ├── Signup/
     ├── Forgot_Password/
@@ -36,7 +37,7 @@ Templates Store/
     ├── Two_Factor_Auth/
     ├── Magic_Link/
     └── Social_Login/
-└── Dashboard_Templates/ # Template 6 — 8 dashboard templates
+├── Dashboard_Templates/ # Template 6 — 8 dashboard templates
     ├── Analytics_Dashboard/
     ├── Finance_Dashboard/
     ├── CRM_Dashboard/
@@ -45,6 +46,11 @@ Templates Store/
     ├── Admin_Panel/
     ├── Team_Workspace/
     └── DevOps_Dashboard/
+└── Landing_Sections/    # Template 7 — modular landing page sections
+    ├── CTA_Sections/
+    ├── Feature_Sections/
+    ├── Hero_Sections/
+    └── Social_Proof/
 ```
 
 ---

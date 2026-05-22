@@ -1,0 +1,53 @@
+﻿@use "variables" as *;
+
+.reviews-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: $bg;
+}
+
+.reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 3rem 0;
+}
+
+.review-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius-xl;
+  padding: 2rem;
+}
+
+.review-stars {
+  display: inline-flex;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  color: $warning;
+}
+
+.review-text {
+  color: $text;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  font-weight: 700;
+}
+
+.review-role {
+  color: $muted;
+  font-size: 0.95rem;
+}
+
+@media (max-width: $bp-tablet) {
+  .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: $bp-mobile) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+

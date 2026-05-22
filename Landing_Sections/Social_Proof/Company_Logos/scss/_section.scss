@@ -1,0 +1,38 @@
+﻿@use "variables" as *;
+
+.logos-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
+}
+
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 0;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  background: $white;
+  border: 1px solid rgba(15,23,42,0.05);
+  border-radius: $radius;
+  color: $muted;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+@media (max-width: $bp-tablet) {
+  .logos-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: $bp-mobile) {
+  .logos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+

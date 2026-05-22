@@ -1,0 +1,57 @@
+﻿@use "variables" as *;
+
+.case-study-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: $white;
+  padding: 4rem 0;
+}
+
+.case-study-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-study-card {
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: $radius-xl;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.case-study-card__logo {
+  width: fit-content;
+  padding: 0.6rem 0.9rem;
+  border-radius: $radius;
+  background: $white;
+  box-shadow: 0 10px 28px rgba(15,23,42,0.06);
+  font-weight: 700;
+}
+
+.case-study-card__quote {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: $text;
+}
+
+.case-study-card__author {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.case-study-card__name { font-weight: 700; }
+
+.case-study-card__role { color: $muted; font-size: 0.95rem; }
+
+@media (max-width: $bp-tablet) {
+  .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: $bp-mobile) {
+  .case-study-grid { grid-template-columns: 1fr; }
+}
+

@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: min(90%, 1100px);
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn--primary {
+  background: #4f46e5;
+  color: #ffffff;
+}
+.btn--primary:hover {
+  background: #3730a3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+}
+.btn--outline {
+  background: transparent;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+}
+.btn--outline:hover {
+  background: #e0e7ff;
+}
+.btn--white {
+  background: #ffffff;
+  color: #4f46e5;
+}
+.btn--white:hover {
+  background: #e0e7ff;
+  transform: translateY(-2px);
+}
+.btn--ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.btn--lg {
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  border-radius: 14px;
+}
+
+.section-preview {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.badge--primary {
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+.badge--white {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.badge--dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+.section-header .section-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #4f46e5;
+  margin-bottom: 0.75rem;
+}
+.section-header h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-header p {
+  font-size: 1.05rem;
+  color: #6b7280;
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.hero-dev {
+  background: #0d1117;
+  padding: 6rem 0 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-dev::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.5), transparent);
+}
+
+.hero-dev__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  font-family: "Courier New", monospace;
+}
+
+.hero-dev h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 1.25rem;
+  max-width: 820px;
+  margin-inline: auto;
+}
+.hero-dev h1 span {
+  color: #60a5fa;
+}
+
+.hero-dev__sub {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 52ch;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.85rem 1.5rem;
+  margin-bottom: 2rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+}
+.terminal .terminal__prompt {
+  color: #34d399;
+}
+.terminal .terminal__cmd {
+  color: #ffffff;
+}
+.terminal .terminal__pkg {
+  color: #60a5fa;
+}
+.terminal .terminal__copy {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #6b7280;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  font-family: inherit;
+}
+.terminal .terminal__copy:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-dev__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-dev__tech {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+.hero-dev__tech span {
+  color: #374151;
+}
+.hero-dev__tech .tech-badge {
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.hero-dev__github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+.hero-dev__github .star {
+  color: #f59e0b;
+}
+.hero-dev__github strong {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .hero-dev {
+    padding: 4rem 0 3rem;
+  }
+  .terminal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-dev__actions {
+    flex-direction: column;
+  }
+}

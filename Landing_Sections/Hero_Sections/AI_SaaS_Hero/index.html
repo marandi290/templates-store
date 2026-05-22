@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI SaaS Hero Section — dark gradient hero with code window mockup." />
+  <title>AI SaaS Hero</title>
+  <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
+</head>
+<body>
+
+  <!-- ═══ COPY FROM HERE ═══════════════════════════════════ -->
+  <section class="hero-ai">
+    <div class="container">
+      <div class="hero-ai__inner">
+
+        <div class="hero-ai__content">
+          <div class="hero-ai__badge">✨ Now in public beta</div>
+
+          <h1>Build smarter apps<br />with <span>AI that scales</span></h1>
+
+          <p>
+            NeuralKit gives your team a unified API for every leading AI model —
+            GPT-4o, Claude, Gemini, and more. Ship faster, spend less, and never
+            get locked in.
+          </p>
+
+          <div class="hero-ai__actions">
+            <a href="#" class="btn btn--primary btn--lg">Start for free</a>
+            <a href="#" class="btn btn--ghost btn--lg">View docs →</a>
+          </div>
+
+          <div class="hero-ai__social-proof">
+            <div class="avatars">
+              <span>AM</span><span>JK</span><span>SR</span><span>TL</span>
+            </div>
+            <span>Trusted by <strong>12,000+</strong> developers worldwide</span>
+          </div>
+        </div>
+
+        <div class="hero-ai__visual">
+          <div class="stat-chip stat-chip--tl">
+            <span class="chip-icon">⚡</span>
+            <div class="chip-text">
+              <span class="chip-label">Avg latency</span>
+              <span class="chip-value">142ms</span>
+            </div>
+          </div>
+
+          <div class="code-window">
+            <div class="code-window__bar">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+              <span class="code-window__title">api-example.js</span>
+            </div>
+            <div class="code-window__body">
+              <div class="line"><span class="ln">1</span><span class="cm">// Connect to any AI model in one line</span></div>
+              <div class="line"><span class="ln">2</span><span class="kw">import</span> <span class="var">{ NeuralKit }</span> <span class="kw">from</span> <span class="str">'@neuralkit/sdk'</span><span class="var">;</span></div>
+              <div class="line"><span class="ln">3</span></div>
+              <div class="line"><span class="ln">4</span><span class="kw">const</span> <span class="var">client</span> <span class="kw">=</span> <span class="kw">new</span> <span class="fn">NeuralKit</span><span class="var">({</span></div>
+              <div class="line"><span class="ln">5</span><span class="var">&nbsp;&nbsp;apiKey: </span><span class="str">process.env.NK_API_KEY</span><span class="var">,</span></div>
+              <div class="line"><span class="ln">6</span><span class="var">});</span></div>
+              <div class="line"><span class="ln">7</span></div>
+              <div class="line"><span class="ln">8</span><span class="kw">const</span> <span class="var">response</span> <span class="kw">=</span> <span class="kw">await</span> <span class="var">client.</span><span class="fn">chat</span><span class="var">({</span></div>
+              <div class="line"><span class="ln">9</span><span class="var">&nbsp;&nbsp;model: </span><span class="str">'gpt-4o'</span><span class="var">,</span></div>
+              <div class="line"><span class="ln">10</span><span class="var">&nbsp;&nbsp;messages: [{ role: </span><span class="str">'user'</span><span class="var">,</span></div>
+              <div class="line"><span class="ln">11</span><span class="var">&nbsp;&nbsp;&nbsp;&nbsp;content: </span><span class="str">'Explain quantum computing'</span> <span class="var">}]</span></div>
+              <div class="line"><span class="ln">12</span><span class="var">});</span></div>
+              <div class="line"><span class="ln">13</span></div>
+              <div class="line"><span class="ln">14</span><span class="var">console.</span><span class="fn">log</span><span class="var">(response.content);</span></div>
+            </div>
+          </div>
+
+          <div class="stat-chip stat-chip--br">
+            <span class="chip-icon">🚀</span>
+            <div class="chip-text">
+              <span class="chip-label">API calls today</span>
+              <span class="chip-value">2.4M</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ═══ COPY TO HERE ════════════════════════════════════ -->
+
+</body>
+</html>

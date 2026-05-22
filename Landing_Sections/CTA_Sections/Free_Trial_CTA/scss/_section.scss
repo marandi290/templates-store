@@ -1,0 +1,76 @@
+﻿@use "variables" as *;
+
+.free-trial-cta {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: $white;
+  padding: 4rem 0;
+}
+
+.free-trial-card {
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
+  border: 1px solid $border;
+  border-radius: $radius-xl;
+  padding: 3rem;
+  box-shadow: 0 24px 60px rgba(15,23,42,0.08);
+}
+
+.free-trial-card__head {
+  margin-bottom: 1.75rem;
+}
+
+.free-trial-card__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: $radius;
+  background: $primary-light;
+  color: $primary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.free-trial-card h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 1rem 0;
+}
+
+.free-trial-features {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.free-trial-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.free-trial-feature__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(79,70,229,0.12);
+  color: $primary;
+  font-size: 1.1rem;
+}
+
+.free-trial-feature__text {
+  font-size: 0.95rem;
+  color: $text;
+}
+
+.free-trial-cta__footer {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .free-trial-card { padding: 4rem; }
+}
+

@@ -1,0 +1,97 @@
+﻿// â”€â”€ Comparison Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+@use 'variables' as *;
+
+.comparison-section {
+  padding: 5rem 0;
+  background: $bg;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+// â”€â”€ Header row
+.comparison-table thead tr th {
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: $white;
+  border-bottom: 2px solid $border;
+
+  &:first-child { text-align: left; background: $white; }
+
+  &.col--us {
+    background: $primary;
+    color: $white;
+    position: relative;
+
+    .col-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $warning;
+      color: $white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+  }
+
+  .col-name { font-size: 1rem; font-weight: 800; display: block; margin-bottom: 0.2rem; }
+  .col-price { font-size: 0.8rem; font-weight: 400; opacity: 0.75; }
+}
+
+// â”€â”€ Body rows
+.comparison-table tbody tr {
+  &:nth-child(even) td { background: $bg; }
+
+  td {
+    padding: 1rem 1.25rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $text;
+    border-bottom: 1px solid $border;
+    background: $white;
+
+    &:first-child { text-align: left; font-weight: 500; }
+
+    &.col--us { background: rgba(79,70,229,0.04); }
+  }
+
+  &:last-child td { border-bottom: none; }
+}
+
+.check { color: $success; font-size: 1.1rem; font-weight: 900; }
+.cross { color: $border; font-size: 1.1rem; }
+.partial { color: $warning; font-size: 0.8rem; font-weight: 600; }
+
+// â”€â”€ CTA row
+.comparison-table tfoot tr td {
+  padding: 1.25rem;
+  text-align: center;
+  background: $white;
+  border-top: 2px solid $border;
+
+  &.col--us { background: rgba(79,70,229,0.04); }
+}
+
+@media (max-width: $bp-tablet) {
+  .comparison-table { font-size: 0.82rem;
+    thead tr th, tbody tr td { padding: 0.75rem 0.75rem; }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .comparison-section { overflow-x: auto; }
+  .comparison-table { min-width: 560px; }
+}
+
