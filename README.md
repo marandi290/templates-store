@@ -15,6 +15,7 @@ A growing collection of free, production-ready HTML + Sass webpage templates. Ea
 | 5 | [Auth_Templates](./Auth_Templates/) | A complete set of 8 auth/user-flow templates: Login, Signup, Forgot Password, Reset Password, OTP, 2FA, Magic Link, Social Login |
 | 6 | [Dashboard_Templates](./Dashboard_Templates/) | A complete set of 8 dashboard templates: Analytics, Finance, CRM, Project Management, AI SaaS, Admin Panel, Team Workspace, DevOps |
 | 7 | [Landing_Sections](./Landing_Sections/) | Modular landing page sections: CTAs, feature blocks, hero screens, and social proof components |
+| 8 | [SaaS_Product_Templates](./SaaS_Product_Templates/) | A set of 10 SaaS UI templates for starter apps, AI tools, CRM, HRMS, LMS, chat, email, notes, files, and kanban |
 
 ---
 
@@ -51,6 +52,17 @@ Templates Store/
     ├── Feature_Sections/
     ├── Hero_Sections/
     └── Social_Proof/
+└── SaaS_Product_Templates/ # Template 8 — 10 SaaS UI templates
+    ├── SaaS_Starter_UI/
+    ├── AI_Tool_UI/
+    ├── CRM_UI/
+    ├── HRMS_UI/
+    ├── LMS_UI/
+    ├── Chat_Application_UI/
+    ├── Email_Client_UI/
+    ├── Note_Taking_App_UI/
+    ├── File_Manager_UI/
+    └── Kanban_Board_UI/
 ```
 
 ---
