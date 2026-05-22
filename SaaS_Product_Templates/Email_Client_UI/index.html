@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Email Client — inbox, starred messages, and message preview pane." />
+  <meta name="description" content="Manage your inbox, compose drafts, and preview messages with a clean email layout." />
   <title>Email Client UI</title>
   <link rel="stylesheet" href="styles.min.css?v=1.0.0" />
 </head>
@@ -20,19 +20,22 @@
     </header>
     <section class="hero">
       <h1>Email Client UI</h1>
-      <p>Inbox management for business email with folders, message preview, and actions.</p>
+      <p>Manage your inbox, compose drafts, and preview messages with a clean email layout.</p>
     </section>
-    <div class="panel-grid">
-      <div class="card"><h2>Active Projects</h2><div class="value">18</div></div>
-      <div class="card"><h2>Monthly Growth</h2><div class="value">+24%</div></div>
-      <div class="card"><h2>Tasks Completed</h2><div class="value">4,720</div></div>
-      <div class="card"><h2>Support Tickets</h2><div class="value">62</div></div>
+
+    <div class="email-shell">
+      <div class="email-sidebar">
+        <div class="email-item active"><strong>Inbox</strong><span>12 unread</span></div>
+        <div class="email-item"><strong>Sent</strong><span>34 messages</span></div>
+        <div class="email-item"><strong>Drafts</strong><span>3 saved</span></div>
+      </div>
+      <div class="email-view">
+        <div class="email-header"><h3>Weekly product review</h3><p>From: hello@company.com</p></div>
+        <p>Here’s the summary of this week’s product updates, key metrics, and next steps for the rollout.</p>
+      </div>
     </div>
-    <div class="grid-wide">
-      <div class="widget"><h3>Overview</h3><p>Email Client — inbox, starred messages, and message preview pane. Use the responsive cards and modern layout to showcase your product features.</p></div>
-      <div class="widget"><h3>Quick Actions</h3><ul class="list"><li class="list-item"><strong>New item</strong><span>Create quickly</span></li><li class="list-item"><strong>Review</strong><span>Pending tasks</span></li><li class="list-item"><strong>Export</strong><span>Download data</span></li></ul></div>
-    </div>
-    <div class="widget"><h3>Recent activity</h3><table class="table"><thead><tr><th>Item</th><th>Status</th><th>Updated</th></tr></thead><tbody><tr><td>Email Client UI launch planning</td><td><span class="badge">Live</span></td><td>Today</td></tr><tr><td>Design review</td><td><span class="badge">In progress</span></td><td>2 days ago</td></tr><tr><td>Client sync</td><td><span class="badge">Scheduled</span></td><td>This week</td></tr></tbody></table></div>
+    <div class="widget"><h3>Quick actions</h3><ul class="list"><li class="list-item"><strong>Compose</strong><span>Start a new message</span></li><li class="list-item"><strong>Archive</strong><span>Clean inbox</span></li></ul></div>
+
   </div>
 </body>
 </html>
